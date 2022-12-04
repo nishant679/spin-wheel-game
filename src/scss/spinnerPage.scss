@@ -1,0 +1,51 @@
+.spinner-main{
+    max-width: 100%;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    height: 100vh;
+    background-image: url('../assets/back.png');
+    background-color:  #C6EFC8;
+    background-size: contain;
+    @media (max-width : 576px){
+        background-repeat: no-repeat;
+    }
+
+    @-moz-keyframes spin { 100% { -moz-transform: rotate(1440deg); } }
+    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(1440deg); } }
+    @keyframes spin { 100% { -webkit-transform: rotate(1440deg); transform:rotate(1440deg); } }
+
+    .wheel-container{
+        // border: 1px solid black;
+        width: 28%;
+        margin: 0 auto;
+        padding-top: 5rem;
+
+        .spin-the-wheel{
+            // -webkit-animation:spin 4s linear infinite;
+            -webkit-animation: spin 4s ease-out infinite;
+            -moz-animation:spin 4s ease-out infinite;
+            animation:spin 4s ease-out infinite;
+        }
+        img{
+            max-width: 100%;
+        }
+        @media (max-width : 576px){
+            width: 90%;
+            padding-top: 50%;
+        }
+    }
+
+    .submit-btn{
+            background: #146531;
+            border-radius: 2rem;
+            // width: 100%;
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            color: white; 
+            padding: 1rem 4rem;   
+            outline: none;
+            font-weight: 900; 
+            border: none;
+        }
+}
