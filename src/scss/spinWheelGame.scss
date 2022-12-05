@@ -1,27 +1,33 @@
 .main-container{
     max-width: 100%;
     display: flex;
-    // flex-direction: row;
-    justify-content: space-between;
     height: 100vh;
-    // background-image: url('../assets/back.png');
     background-image: url('../assets/bg1.png'), url('../assets/bgbottom.png');
     background-position: top, bottom;
     background-color:  #C6EFC8;
     background-size: contain;
 
-    @media (max-width : 576px){
+    @media (max-width : 576px) {
+        background-repeat: no-repeat;
         flex-direction: column;
         justify-content: flex-start;
-        background-size: auto;
-        background-repeat: no-repeat;
-        // border: 1px solid purple;     
     }
+
+    @media (min-width: 768px) and (max-width: 1201px){
+        max-width: 48%;
+        background-repeat: no-repeat;
+    }
+    
+    
+
     .img-container{
         max-width: 50%;
-        // border: 1px solid black;
-        @media (max-width : 576px){
+        @media (max-width : 576px) {
             max-width: 100%;
+        }
+
+        @media (min-width: 768px) and (max-width: 1201px){
+            margin-left: -11%;
         }
 
         .wheel-img{
@@ -29,10 +35,16 @@
             margin-top: 18%;
             margin-left: 37%;
             // opacity: 100%;
-            @media (max-width : 576px){
+            @media (max-width : 576px) {
                 max-width: 76%;
                 margin: 0;
                 margin-top: -26%;
+            }
+            @media (min-width: 768px) and (max-width: 1201px){
+                // background-color: aqua;
+                margin-left: -50%;
+                max-width: 100%;
+                margin-top: 240px;
             }
         }
     }
@@ -47,29 +59,32 @@
             max-width: 96%;
             margin: 3rem 1rem;
             margin-top: 3rem;
-
-            // border: 1px solid red;
+        }
+        @media (min-width: 768px) and (max-width: 1201px){
+            max-width: 80%;
+            margin: 8rem 0;
+            margin-right: 3rem;
         }
         
         .title{
             font-family: 'Poppins';
             font-weight: 700;
-            // border: 1px solid red;
-            // margin-top: 20%;
             text-align: start;
             h2{
                 font-weight: 900;
                 font-size: 2rem;
-                line-height: 1rem;
+                // line-height: 1rem;
                 @media (max-width : 576px){
                     font-size: 1.8rem;
+                }
+                @media (min-width: 768px) and (max-width: 1201px){
+                    font-size: 1.6rem;
                 }
             }
             
         }
 
         .email, .phone{
-            // border: 1px solid black;
             display: flex;
             background-color: white;
             border-bottom: 1px solid #68c286;
@@ -78,11 +93,11 @@
 
             .icon{
                 padding: 1rem 1rem;
-                // margin-right: 1rem;
             }
 
             .inp{
                 display: flex;
+                width: 80%;
                 flex-direction: column;
                 justify-content: flex-start;
                 text-align: start;
@@ -97,7 +112,8 @@
 
             input{
                 border: none;
-                border-bottom: 1px solid rgb(168, 168, 168);
+                font-size: 1rem;
+                font-weight: 600;
                 color: rgb(93, 93, 93);
                 width: 100%;
                 outline: none;
@@ -113,8 +129,15 @@
             margin-bottom: 1rem;
             padding: 0.1rem 0.2rem;
 
+            .checkbox{
+                height: 2rem;
+                width: 2rem;
+                background-color: black;
+                margin: auto 0.3rem;
+            }
+
             p{
-                font-size: 0.5rem;
+                font-size: 0.6rem;
                 text-align: start;
             }
         }
@@ -146,5 +169,12 @@
                 img{max-width: 1rem;}
             }
         }
+    }
+}
+
+.tab-bg{
+    @media (min-width: 768px) and (max-width: 1201px){
+        background-image: url('../assets/tabback.png');
+        background-size: contain;
     }
 }

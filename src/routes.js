@@ -4,7 +4,6 @@ import SpinWheelGameS from "./components/spinWheelGame";
 import SpinnerPage from "./components/spinnerPage";
 
 const RouteMain = () => {
-  console.log("On React Router");
   return (
     <BrowserRouter>
       <Routes>
