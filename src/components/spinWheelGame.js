@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import wellImg from "../assets/wheeel.png";
 import "../scss/spinWheelGame.scss";
 import phoneIcon from "../assets/phone.png";
@@ -6,6 +7,29 @@ import closeIcon from "../assets/close.png";
 import emailIcon from "../assets/email.png";
 
 const SpinWheelGame = () => {
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const history = useNavigate();
+
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
+
+  // const validatePhone = (phone) => {
+  //   // const re = ^((\+1)?[\s-]?)?\(?[1-9]\d\d\)?[\s-]?[1-9]\d\d[\s-]?\d\d\d\d;
+  //   // return re.test(phone);
+  // };
+
+  const saveUser = () => {
+    console.log("Validating Email", validateEmail(email));
+    if (validateEmail(email) && phone.length > 9) {
+      history("/spin_wheel");
+    } else {
+      alert("Please Enter Valid Email and phone number");
+    }
+  };
+
   return (
     <div className="main-container">
       <div className="img-container">
@@ -22,7 +46,12 @@ const SpinWheelGame = () => {
           </div>
           <div className="inp">
             <label>Email:</label>
-            <input type="text" />
+            <input
+              type="text"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
           </div>
         </div>
         <div className="phone">
@@ -31,7 +60,14 @@ const SpinWheelGame = () => {
           </div>
           <div className="inp">
             <label>Phone:</label>
-            <input type="text" id="phone" />
+            <input
+              type="text"
+              id="phone"
+              value={phone}
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
+            />
           </div>
         </div>
         <div className="concent">
@@ -43,7 +79,7 @@ const SpinWheelGame = () => {
             </p>
           </div>
         </div>
-        <button type="button" className="submit-btn">
+        <button type="button" className="submit-btn" onClick={saveUser}>
           Try your luck
         </button>
         <div className="info">

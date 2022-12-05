@@ -5,6 +5,8 @@
     justify-content: space-between;
     height: 100vh;
     // background-image: url('../assets/back.png');
+    background-image: url('../assets/bg1.png'), url('../assets/bgbottom.png');
+    background-position: top, bottom;
     background-color:  #C6EFC8;
     background-size: contain;
 
